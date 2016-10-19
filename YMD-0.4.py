@@ -35,15 +35,15 @@ class Main(tk.Frame):
         self.side_frame = tk.LabelFrame(self, text="Help", padx=2, pady=4, width=50, height=300)
         self.side_frame.grid(row=0, column=1, rowspan=6,padx=(0,5), pady=(0,5), sticky='NW')
 
-        self.side_label_1 = tk.Label(self.side_frame, text="Choose a .txt file from a local drive \n or enter it instead. \n \n The input must be formated like the \n example shows "+"("+"caps sensitive."+")")
+        self.side_label_1 = tk.Label(self.side_frame, text="Step 1: Either choose a .txt file from \n a local drive or enter it. \n \n The input must be formated like the \n example shows "+"("+"caps sensitive."+")")
         self.side_label_1.grid(row=0,column=0, sticky='W')  
         self.side_label_2 = tk.Label(self.side_frame, text="e.g. Artist - Song")
         self.side_label_2.grid(row=1,column=0)
         self.side_break = tk.Label(self.side_frame, text="\n\n")
         self.side_break.grid(row=2)
-        self.side_label_4 = tk.Label(self.side_frame, text="Choose folder to output songs to.")
+        self.side_label_4 = tk.Label(self.side_frame, text="Step 2: Choose folder to put songs.")
         self.side_label_4.grid(row=3)
-        self.side_label_5 = tk.Label(self.side_frame, text="Check 'sort into folders' to output \n songs into artist named sub-folders \n in a folder named music.")
+        self.side_label_5 = tk.Label(self.side_frame, text="Check 'sort into folders' to output \n songs into artist named sub-folders \n in a folder named 'music'.")
         self.side_label_5.grid(row=4)
     
                                      
@@ -198,6 +198,10 @@ class Main(tk.Frame):
             
             #converts to mp3
             if self.check_sort_into == 1:
+                if os.path.isdir(str(self.output) + "\\music\\") == True:
+                    pass
+                else:
+                    os.makedirs(str(self.output) + "\\music\\")
                 pos = word.index('-') - 1
                 artist = word[:pos]
                 if os.path.isdir(str(self.output) + "\\music\\" + artist) == True:
@@ -239,7 +243,6 @@ class Main(tk.Frame):
 
 def first_run():
     os.system("pip install youtube-dl")
-    #os.system("pip install pafy")
     print("Welcome")
     with open("runtime.txt", 'w') as r:
         r.write("1")
@@ -247,7 +250,7 @@ def first_run():
     
 def run():
     root = tk.Tk()
-    root.title("AMD")
+    root.title("Automatic Music Downloader")
     root.geometry("648x355")
     root.resizable(width=False, height=False)
     app = Main(root)
