@@ -7,8 +7,6 @@ Very important:
         
  
 Some what important:
-    Make look better
-        Add ttk styling where possible
     Comments
     Variable name consistency fix
     Compile tests  
@@ -16,3 +14,4 @@ Some what important:
 
 Not very important:
     Add a horitzontal scroll to the ScrolledText entry box
+    Icon
