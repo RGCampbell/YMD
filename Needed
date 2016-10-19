@@ -4,13 +4,16 @@ Very important:
     Hide window for convert subprocess
         It is a child so creationflags=CREATE_NO_WINDOW will not work
         The compiling process may be able to achieve this
+        
  
 Some what important:
+    grey out stuff when downloading
     Completed label
     Add ttk styling where possible
     Comments
     Variable name consistency fix
-    Compile tests
+    Compile tests  
+        Tried cx_Freeze with little success
     Display error messages in x row depending on how many error messages there currently is
 
 Not very important:
