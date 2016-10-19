@@ -7,14 +7,12 @@ Very important:
         
  
 Some what important:
-    grey out stuff when downloading
-    Completed label
-    Add ttk styling where possible
+    Make look better
+        Add ttk styling where possible
     Comments
     Variable name consistency fix
     Compile tests  
         Tried cx_Freeze with little success
-    Display error messages in x row depending on how many error messages there currently is
 
 Not very important:
     Add a horitzontal scroll to the ScrolledText entry box
