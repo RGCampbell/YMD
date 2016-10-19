@@ -73,25 +73,13 @@ class Main(tk.Frame):
         self.completed = tk.Label(self, text="completed!", fg='blue')
         self.progressbar = ttk.Progressbar(self, orient='horizontal', mode='indeterminate', length=100)
 
-    def offline_help(self):
-        print("offline_help")
-
-    def online_help(self):
-        print("online_help")
-
-    def developer(self):
-        print("developer")
-
-    def project(self):
-        print("project")
-
     def input_dir_change(self):
-        self.incorrect_input_1.config(text="")
+        self.incorrect_input_1.grid_remove()
         self.text_input = filedialog.askopenfilename(filetypes = [("Text file", "*.txt")], title='Select a text file')
         self.file_input.set(self.text_input)
 
     def output_dir_change(self):
-        self.incorrect_input_2.config(text="")
+        self.incorrect_input_2.grid_remove()
         self.text_output = filedialog.askdirectory()
         self.file_output.set(self.text_output)
         
@@ -259,8 +247,8 @@ def first_run():
     
 def run():
     root = tk.Tk()
-    root.title("Main")
-    root.geometry("648x380")
+    root.title("AMD")
+    root.geometry("648x355")
     root.resizable(width=False, height=False)
     app = Main(root)
     root.mainloop()
