@@ -4,7 +4,8 @@ Very important:
     Hide window for convert subprocess
         It is a child so creationflags=CREATE_NO_WINDOW will not work
         The compiling process may be able to achieve this
-    Cancel download button
+    sounds
+    colour theme
     More error handling
         e.g. pip install youtube-dl
  
